@@ -14,6 +14,11 @@ class CargarActivity : AppCompatActivity() {
         ciudadDBHELPER = miSQLiteHelper(this)
         val btnGuardar = findViewById<Button>(R.id.guardar_button)
 
+        var btnAtras = findViewById<Button>(R.id.atras_button)
+        btnAtras.setOnClickListener{
+            finish() // Cierra la actividad actual y vuelve a la anterior
+        }
+
         btnGuardar.setOnClickListener{
             var nombre = findViewById<TextView>(R.id.ciudad_text).text.toString()
             var pais = findViewById<TextView>(R.id.pais_text).text.toString()

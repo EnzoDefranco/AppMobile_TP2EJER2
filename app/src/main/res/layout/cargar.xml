@@ -11,64 +11,64 @@
         android:layout_height="match_parent"
         android:padding="16dp">
 
-
         <TextView
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Capitales y ciudades del mundo"
             android:textSize="50sp"
-            android:gravity="center"
-            android:id="@+id/title"/>
+            android:gravity="center" />
 
         <EditText
             android:id="@+id/pais_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Ingrese el nombre del país"
             android:layout_below="@id/title"
-            android:layout_marginTop="40dp" />
-
+            android:layout_marginTop="40dp"
+            android:hint="Ingrese el nombre del país" />
 
         <EditText
             android:id="@+id/ciudad_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/pais_text"
-            android:hint="Ingrese el nombre de la ciudad capital"
-            android:layout_marginTop="25dp" />
-
+            android:layout_marginTop="40dp"
+            android:hint="Ingrese el nombre de la ciudad capital" />
 
         <EditText
             android:id="@+id/poblacion_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/ciudad_text"
-            android:hint="Ingrese la población aproximada"
-            android:layout_marginTop="25dp" />
+            android:layout_marginTop="40dp"
+            android:hint="Ingrese la población aproximada" />
 
         <Button
-            android:layout_marginTop="122dp"
             android:id="@+id/guardar_button"
-            android:layout_width="125dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/poblacion_text"
-            android:text="Guardar"
-            android:textColor="@color/white"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="138dp"
+            android:layout_marginEnd="45dp"
             android:background="#2A2F4F"
-            android:layout_marginStart="250dp"
-            />
+            android:text="Guardar"
+            android:textColor="@color/white" />
 
         <Button
-            android:id="@+id/atras"
-            android:layout_width="125dp"
+            android:id="@+id/atras_button"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/poblacion_text"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="122dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="138dp"
             android:background="#2A2F4F"
             android:text="Atras"
             android:textColor="@color/white" />
 
     </RelativeLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
