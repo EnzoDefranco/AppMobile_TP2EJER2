@@ -34,6 +34,7 @@
             android:id="@+id/ciudad"
             android:layout_below="@id/ciudad_consulta"
             android:hint="ciudad"
+            android:layout_marginTop="80dp"
             />
 
         <EditText
@@ -63,6 +64,8 @@
             android:textColor="@color/white"
             android:background="#2A2F4F"
             android:gravity="center"
+            android:layout_centerInParent="true"
+
             />
 
 
