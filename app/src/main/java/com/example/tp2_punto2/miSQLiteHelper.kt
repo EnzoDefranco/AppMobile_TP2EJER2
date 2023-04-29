@@ -28,4 +28,40 @@ class miSQLiteHelper(context: Context) : SQLiteOpenHelper(
         return resul != (-1).toLong()
     }
 
+    fun getDataByCity(consulta: String): Array<Any>? {
+        val db = this.readableDatabase
+        val selectByCityQuery = "SELECT * FROM ciudad WHERE nombre = ?"
+        val cursor = db.rawQuery(selectByCityQuery, arrayOf(consulta))
+        if (cursor.moveToFirst()) {
+            val data1 = cursor.getString(0)
+            val data2 = cursor.getString(1)
+            val data3 = cursor.getInt(2)
+            cursor.close()
+            return arrayOf(data1, data2, data3)
+        } else {
+            cursor.close()
+            return null
+        }
+    }
+
 }
+
+/*
+
+fun getDataByCity(city: String): Array<Any>? {
+        val db = this.readableDatabase
+        val selectByCityQuery = "SELECT * FROM $TABLE_NAME WHERE $KEY_DATA2 = ?"
+        val cursor = db.rawQuery(selectByCityQuery, arrayOf(city))
+        if (cursor.moveToFirst()) {
+            val data1 = cursor.getString(cursor.getColumnIndex(KEY_DATA1))
+            val data2 = cursor.getString(cursor.getColumnIndex(KEY_DATA2))
+            val data3 = cursor.getInt(cursor.getColumnIndex(KEY_DATA3))
+            cursor.close()
+            return arrayOf(data1, data2, data3)
+        } else {
+            cursor.close()
+            return null
+        }
+    }
+
+ */

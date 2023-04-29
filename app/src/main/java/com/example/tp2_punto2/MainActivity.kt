@@ -10,10 +10,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var btncarga=findViewById<Button>(R.id.btn_CiudadCapital);
-        btncarga.setOnClickListener{
+        var btnCarga=findViewById<Button>(R.id.btn_CiudadCapital);
+        btnCarga.setOnClickListener{
             val carga = Intent(this, CargarActivity::class.java)
             startActivity(carga)
         }
+
+        var btnConsultar=findViewById<Button>(R.id.btnConsultar);
+        btnConsultar.setOnClickListener{
+            val consultar = Intent(this, ConsultarActivity::class.java)
+            startActivity(consultar)
+        }
+
     }
 }

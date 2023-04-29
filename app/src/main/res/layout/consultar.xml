@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CargarActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Capitales y ciudades del mundo"
+            android:textSize="50sp"
+            android:gravity="center"
+            android:id="@+id/title"/>
+
+        <EditText
+            android:id="@+id/ciudad_consulta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:hint="Ingrese el nombre de la ciudad capital"
+            android:layout_marginTop="25dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ciudad"
+            android:layout_below="@id/ciudad_consulta"
+            android:hint="ciudad"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pais"
+            android:layout_below="@id/ciudad"
+            android:hint="pais"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/poblacion"
+            android:layout_below="@id/pais"
+            android:hint="poblacion"
+            />
+
+
+        <Button
+            android:layout_marginTop="120dp"
+            android:id="@+id/btnConsultar"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/poblacion"
+            android:text="Consultar"
+            android:textColor="@color/white"
+            android:background="#2A2F4F"
+            android:gravity="center"
+            />
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
