@@ -22,5 +22,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(consultar)
         }
 
+        var btnBorrar=findViewById<Button>(R.id.btnBorrar);
+        btnBorrar.setOnClickListener{
+            val borrar = Intent(this, BorrarActivity::class.java)
+            startActivity(borrar)
+        }
+
     }
 }

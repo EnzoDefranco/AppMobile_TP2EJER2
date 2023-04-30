@@ -43,6 +43,14 @@ class miSQLiteHelper(context: Context) : SQLiteOpenHelper(
             return null
         }
     }
+    fun deleteByCity(consulta: String): Boolean{
+        val db = this.writableDatabase
+        val whereClause = "nombre = ?"
+        val whereArgs = arrayOf(consulta)
+        val deleteRows = db.delete("ciudad" , whereClause, whereArgs)
+        db.close()
+        return deleteRows > 0
+    }
 
 }
 
