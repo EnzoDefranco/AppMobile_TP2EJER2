@@ -27,7 +27,6 @@ class BorrarCiudadesActivity : AppCompatActivity() {
 
         var btnConsulta = findViewById<Button>(R.id.btnConsultar)
         btnConsulta.setOnClickListener{
-            findViewById<TextView>(R.id.pais_consulta).visibility= View.GONE
             var consulta = findViewById<TextView>(R.id.pais_consulta).text.toString()
             val datalist = ciudadDBHELPER.buscarPorPais(consulta)
             if (datalist != null){
@@ -54,7 +53,6 @@ class BorrarCiudadesActivity : AppCompatActivity() {
             else
             {
                 Toast.makeText(this, "No se encontro el pais", Toast.LENGTH_SHORT).show()
-                finish()
             }
         }
 
