@@ -19,11 +19,12 @@ class ModificarActivity : AppCompatActivity() {
 
         btnModificar.setOnClickListener{
             val ciudad = findViewById<TextView>(R.id.ciudad_consulta).text.toString()
-            val poblacion = findViewById<TextView>(R.id.poblacion_consulta).text.toString().toInt()
-            if (ciudad.isNotEmpty() && poblacion >= 0){
-                val mod = ciudadDBHELPER.modificarPoblacion(ciudad, poblacion)
+            val poblacion = findViewById<TextView>(R.id.poblacion_consulta).text.toString()
+            if (ciudad.isNotEmpty() && poblacion.isNotEmpty() ){
+                val mod = ciudadDBHELPER.modificarPoblacion(ciudad, poblacion.toInt())
                 if (mod){
                     Toast.makeText(this, "La poblacion de la ciudad "+ciudad+" ha sido modificada", Toast.LENGTH_SHORT).show()
+                    finish()
                 }
                 else{
                     Toast.makeText(this, "La ciudad ingresada no existe", Toast.LENGTH_SHORT).show()

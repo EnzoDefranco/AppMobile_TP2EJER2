@@ -22,6 +22,10 @@ class ConsultarActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.poblacion).visibility = View.GONE
 
         var btn = findViewById<Button>(R.id.btnConsultar)
+        var btnAtras = findViewById<Button>(R.id.atras_button)
+        btnAtras.setOnClickListener{
+            finish() // Cierra la actividad actual y vuelve a la anterior
+        }
         btn.setOnClickListener{
             var consulta = findViewById<TextView>(R.id.ciudad_consulta).text.toString()
             val datalist = ciudadDBHELPER.buscarPorCiudad(consulta)

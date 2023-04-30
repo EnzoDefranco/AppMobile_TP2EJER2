@@ -54,19 +54,30 @@
             />
 
 
+
         <Button
-            android:layout_marginTop="120dp"
             android:id="@+id/btnConsultar"
-            android:layout_width="125dp"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/poblacion"
-            android:text="Consultar"
-            android:textColor="@color/white"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="138dp"
+            android:layout_marginEnd="45dp"
             android:background="#2A2F4F"
-            android:gravity="center"
-            android:layout_centerInParent="true"
+            android:text="Consultar"
+            android:textColor="@color/white" />
 
-            />
+        <Button
+            android:id="@+id/atras_button"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/poblacion"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="138dp"
+            android:background="#2A2F4F"
+            android:text="Atras"
+            android:textColor="@color/white" />
 
 
     </RelativeLayout>

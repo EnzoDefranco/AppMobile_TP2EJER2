@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         ciudadDBHELPER = miSQLiteHelper(this)
 
-        ciudadDBHELPER.reiniciarBaseDeDatos()
+
 
         var btnCarga=findViewById<Button>(R.id.btn_CiudadCapital);
         btnCarga.setOnClickListener{
