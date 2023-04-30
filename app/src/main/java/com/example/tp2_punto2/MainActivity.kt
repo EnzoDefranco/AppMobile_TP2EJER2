@@ -37,6 +37,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(borrarCiu)
         }
 
+        var btnModificar=findViewById<Button>(R.id.btnModificarPoblacion);
+        btnModificar.setOnClickListener{
+            val mod = Intent(this, ModificarActivity::class.java)
+            startActivity(mod)
+        }
 
 
     }
