@@ -24,7 +24,7 @@ class ConsultarActivity : AppCompatActivity() {
         var btn = findViewById<Button>(R.id.btnConsultar)
         btn.setOnClickListener{
             var consulta = findViewById<TextView>(R.id.ciudad_consulta).text.toString()
-            val datalist = ciudadDBHELPER.getDataByCity(consulta)
+            val datalist = ciudadDBHELPER.buscarPorCiudad(consulta)
             if (datalist != null){
 
                 findViewById<TextView>(R.id.ciudad_consulta).visibility = View.GONE
@@ -37,7 +37,9 @@ class ConsultarActivity : AppCompatActivity() {
             }
             else
             {
+
                 Toast.makeText(this, "No se encontro la capital", Toast.LENGTH_SHORT).show()
+                finish()
             }
         }
 

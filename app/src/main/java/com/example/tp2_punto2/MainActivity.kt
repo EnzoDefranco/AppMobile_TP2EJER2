@@ -6,9 +6,13 @@ import android.widget.Button
 import android.content.Intent
 
 class MainActivity : AppCompatActivity() {
+    lateinit var ciudadDBHELPER: miSQLiteHelper
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        ciudadDBHELPER = miSQLiteHelper(this)
+
+        ciudadDBHELPER.reiniciarBaseDeDatos()
 
         var btnCarga=findViewById<Button>(R.id.btn_CiudadCapital);
         btnCarga.setOnClickListener{
@@ -27,6 +31,13 @@ class MainActivity : AppCompatActivity() {
             val borrar = Intent(this, BorrarActivity::class.java)
             startActivity(borrar)
         }
+        var btnBorrarCiudades=findViewById<Button>(R.id.btnBorrarCiudades);
+        btnBorrarCiudades.setOnClickListener{
+            val borrarCiu = Intent(this, BorrarCiudadesActivity::class.java)
+            startActivity(borrarCiu)
+        }
+
+
 
     }
 }

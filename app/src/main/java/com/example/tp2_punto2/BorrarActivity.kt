@@ -26,7 +26,7 @@ class BorrarActivity : AppCompatActivity() {
         btnConsulta.setOnClickListener{
             findViewById<TextView>(R.id.ciudad_consulta).visibility=View.GONE
             var consulta = findViewById<TextView>(R.id.ciudad_consulta).text.toString()
-            val datalist = ciudadDBHELPER.getDataByCity(consulta)
+            val datalist = ciudadDBHELPER.buscarPorCiudad(consulta)
             if (datalist != null){
 
                 btnConsulta.visibility=View.GONE
@@ -35,7 +35,7 @@ class BorrarActivity : AppCompatActivity() {
 
                 findViewById<TextView>(R.id.ciudad).text = "Ciudad a borrar:  " + datalist[0] as String
                 btnBorrar.setOnClickListener{
-                    val delete = ciudadDBHELPER.deleteByCity(consulta)
+                    val delete = ciudadDBHELPER.deleteCiudad(consulta)
                     if (delete)
                         {
                             Toast.makeText(this, "Se ha borrado la ciudad " +consulta,Toast.LENGTH_LONG).show()

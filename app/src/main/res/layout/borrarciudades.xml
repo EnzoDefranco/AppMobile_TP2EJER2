@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CargarActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Capitales y ciudades del mundo"
+            android:textSize="50sp" />
+
+        <EditText
+            android:id="@+id/pais_consulta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:hint="Nombre del pais que desea buscar"
+            android:layout_marginTop="25dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pais"
+            android:layout_below="@id/pais_consulta"
+            android:hint="pais"
+            android:layout_marginTop="80dp"
+            android:inputType="none"
+            android:cursorVisible="false"
+            android:background="@null"
+            android:gravity="center"
+
+
+            />
+
+
+
+        <Button
+            android:layout_marginTop="120dp"
+            android:id="@+id/btnConsultar"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pais"
+            android:text="Consultar"
+            android:textColor="@color/white"
+            android:background="#2A2F4F"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+
+            />
+
+        <Button
+            android:layout_marginTop="120dp"
+            android:id="@+id/btnBorrar"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pais"
+            android:text="Borrar"
+            android:textColor="@color/white"
+            android:background="#2A2F4F"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+
+            />
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

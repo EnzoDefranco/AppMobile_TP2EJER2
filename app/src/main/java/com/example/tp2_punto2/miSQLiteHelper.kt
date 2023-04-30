@@ -17,6 +17,13 @@ class miSQLiteHelper(context: Context) : SQLiteOpenHelper(
         onCreate(db)
     }
 
+    fun reiniciarBaseDeDatos() {
+        val db = this.writableDatabase
+        db.execSQL("DROP TABLE IF EXISTS ciudad")
+        onCreate(db)
+        db.close()
+    }
+
     fun agregarCiudad(nombre: String, pais: String, poblacion: Int): Boolean {
         val datos = ContentValues()
         datos.put("nombre", nombre)
@@ -28,7 +35,7 @@ class miSQLiteHelper(context: Context) : SQLiteOpenHelper(
         return resul != (-1).toLong()
     }
 
-    fun getDataByCity(consulta: String): Array<Any>? {
+    fun buscarPorCiudad(consulta: String): Array<Any>? {
         val db = this.readableDatabase
         val selectByCityQuery = "SELECT * FROM ciudad WHERE nombre = ?"
         val cursor = db.rawQuery(selectByCityQuery, arrayOf(consulta))
@@ -43,13 +50,48 @@ class miSQLiteHelper(context: Context) : SQLiteOpenHelper(
             return null
         }
     }
-    fun deleteByCity(consulta: String): Boolean{
+    fun buscarPorPais(consulta: String): Array<Any>? {
+        val db = this.readableDatabase
+        val selectByCountryQuery = "SELECT * FROM ciudad WHERE pais = ?"
+        val cursor = db.rawQuery(selectByCountryQuery, arrayOf(consulta))
+        if (cursor.moveToFirst()) {
+            val data1 = cursor.getString(0)
+            val data2 = cursor.getString(1)
+            val data3 = cursor.getInt(2)
+            cursor.close()
+            return arrayOf(data1, data2, data3)
+        } else {
+            cursor.close()
+            return null
+        }
+    }
+    fun deleteCiudad(consulta: String): Boolean{
         val db = this.writableDatabase
         val whereClause = "nombre = ?"
         val whereArgs = arrayOf(consulta)
         val deleteRows = db.delete("ciudad" , whereClause, whereArgs)
         db.close()
         return deleteRows > 0
+    }
+
+    fun deletePais(consulta: String):Boolean{
+        val db = this.writableDatabase
+        val whereClause = "pais = ?"
+        val whereArgs = arrayOf(consulta)
+        val deleteRows = db.delete( "ciudad", whereClause, whereArgs)
+        db.close()
+        return deleteRows > 0
+    }
+    fun modificarPoblacion(city: String, population: Int): Boolean {
+        val db = this.writableDatabase
+        val values = ContentValues().apply {
+            put("poblacion", population)
+        }
+        val whereClause = "nombre = ?"
+        val whereArgs = arrayOf(city)
+        val rowsUpdated = db.update("ciudad", values, whereClause, whereArgs)
+        db.close()
+        return rowsUpdated > 0
     }
 
 }
