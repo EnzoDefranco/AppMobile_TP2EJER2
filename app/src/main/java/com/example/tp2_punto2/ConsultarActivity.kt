@@ -41,7 +41,6 @@ class ConsultarActivity : AppCompatActivity() {
             }
             else
             {
-
                 Toast.makeText(this, "No se encontro la capital", Toast.LENGTH_SHORT).show()
             }
         }

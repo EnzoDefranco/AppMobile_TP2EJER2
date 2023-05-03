@@ -17,6 +17,11 @@ class ModificarActivity : AppCompatActivity() {
         ciudadDBHELPER = miSQLiteHelper(this)
         var btnModificar = findViewById<Button>(R.id.btnModificar)
 
+        var btnAtras = findViewById<Button>(R.id.atras_button)
+        btnAtras.setOnClickListener{
+            finish() // Cierra la actividad actual y vuelve a la anterior
+        }
+
         btnModificar.setOnClickListener{
             val ciudad = findViewById<TextView>(R.id.ciudad_consulta).text.toString()
             val poblacion = findViewById<TextView>(R.id.poblacion_consulta).text.toString()

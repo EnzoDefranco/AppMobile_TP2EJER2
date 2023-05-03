@@ -20,7 +20,10 @@ class BorrarActivity : AppCompatActivity() {
         ciudad.visibility = View.GONE
         btnBorrar.visibility=View.GONE
 
-
+        var btnAtras = findViewById<Button>(R.id.atras_button)
+        btnAtras.setOnClickListener{
+            finish() // Cierra la actividad actual y vuelve a la anterior
+        }
 
         var btnConsulta = findViewById<Button>(R.id.btnConsultar)
         btnConsulta.setOnClickListener{
